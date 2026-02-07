@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Coming Soon</title>
+
+  <!-- Fonts matching your main theme -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      height: 100vh;
+      overflow: hidden;
+      font-family: "Poppins", sans-serif;
+      background: radial-gradient(circle at top, #060814, #02030a 70%);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    /* Canvas background */
+    canvas {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+    }
+
+    /* Center card */
+    .container {
+      position: relative;
+      z-index: 2;
+      padding: 48px 42px;
+      border-radius: 26px;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(14px);
+      max-width: 520px;
+      width: 90%;
+      animation: fadeUp 1.2s ease;
+    }
+
+    h1 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(2.6rem, 6vw, 3.6rem);
+      background: linear-gradient(120deg, #f7c6d9, #ff8fb1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 14px;
+    }
+
+    p {
+      opacity: 0.75;
+      line-height: 1.6;
+      margin-bottom: 28px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 11px 26px;
+      border-radius: 999px;
+      border: 1px solid #ff8fb1;
+      text-decoration: none;
+      color: white;
+      transition: 0.35s ease;
+    }
+
+    .btn:hover {
+      background: #ff8fb1;
+      transform: translateY(-2px);
+      box-shadow: 0 0 18px rgba(255, 143, 177, 0.45);
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(25px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Lily of the valley falling background -->
+  <canvas id="flowers"></canvas>
+
+  <!-- Content -->
+  <div class="container">
+    <h1>Coming Soon</h1>
+    <p>
+      Something beautiful is still being prepared with love…  
+      Come back soon beautiful
+    </p>
+    <a href="index.html" class="btn">Back to Home</a>
+  </div>
+
+  <script>
+    const canvas = document.getElementById("flowers");
+    const ctx = canvas.getContext("2d");
+
+    function resize() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    resize();
+    window.addEventListener("resize", resize);
+
+    /* Lily of the valley particles */
+    const flowers = Array.from({ length: 28 }, () => ({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      size: 10 + Math.random() * 12,
+      speed: 0.2 + Math.random() * 0.5,
+      drift: (Math.random() - 0.5) * 0.25,
+      glow: 0.4 + Math.random() * 0.4
+    }));
+
+    function drawFlower(f) {
+      ctx.save();
+      ctx.translate(f.x, f.y);
+
+      /* glow */
+      const g = ctx.createRadialGradient(0, 0, 0, 0, 0, f.size * 1.8);
+      g.addColorStop(0, "rgba(255,255,255," + f.glow + ")");
+      g.addColorStop(1, "rgba(255,255,255,0)");
+      ctx.fillStyle = g;
+
+      /* bell-shaped lily */
+      ctx.beginPath();
+      ctx.arc(0, 0, f.size * 0.5, Math.PI, 0);
+      ctx.quadraticCurveTo(f.size * 0.4, f.size * 0.6, 0, f.size * 0.9);
+      ctx.quadraticCurveTo(-f.size * 0.4, f.size * 0.6, -f.size * 0.5, 0);
+      ctx.fill();
+
+      ctx.restore();
+    }
+
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      flowers.forEach(f => {
+        f.y += f.speed;
+        f.x += f.drift;
+
+        if (f.y > canvas.height + 20) {
+          f.y = -20;
+          f.x = Math.random() * canvas.width;
+        }
+
+        drawFlower(f);
+      });
+
+      requestAnimationFrame(animate);
+    }
+
+    animate();
+  </script>
+
+</body>
+</html>

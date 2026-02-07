@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Week Surprise</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="A magical journey through Valentine's Week - created with love">
+    <meta name="keywords" content="valentine, love, romance, valentine week">
+    <meta property="og:title" content="Valentine's Week - A Journey of Love">
+    <meta property="og:description" content="Experience a magical romantic journey">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💖</text></svg>">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/home.css">
+</head>
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="heart-loader">
+            <div class="heart"></div>
+            <div class="heart-shadow"></div>
+        </div>
+        <p class="loading-text">Loading magic...patience sweetie</p>
+    </div>
+
+    <!-- Music Toggle -->
+    <button id="musicToggle" class="music-toggle">
+        <span class="music-icon">🎵</span>
+    </button>
+
+    <!-- Audio -->
+    <audio id="bgMusic" loop>
+        <!-- Add your music file here -->
+        <!-- <source src="assets/music/romantic.mp3" type="audio/mpeg"> -->
+    </audio>
+
+    <!-- Main Container -->
+    <div id="mainContent" class="main-content">
+        <!-- Particle Canvas -->
+        <canvas id="particleCanvas"></canvas>
+        
+        <!-- Lily Flowers Canvas -->
+        <canvas id="lilyCanvas"></canvas>
+
+        <!-- Hero Section -->
+        <div class="hero-section">
+            <div class="hero-content">
+                <h1 class="main-title">
+                    <span class="title-line">Hey My Princess,</span>
+                    <span class="title-line">What day is it today?</span>
+                </h1>
+                
+                <div class="days-grid">
+                    <a href="rose-day.html" class="day-card" data-day="rose">
+                        <div class="card-icon">🌹</div>
+                        <h3>Rose Day</h3>
+                        <p>Feb 7</p>
+                    </a>
+                    
+                    <a href="coming-soon.html" class="day-card" data-day="propose">
+                        <div class="card-icon">💍</div>
+                        <h3>Propose Day</h3>
+                        <p>Feb 8</p>
+                    </a>
+                    
+                    <a href="coming-soon.html" class="day-card" data-day="chocolate">
+                        <div class="card-icon">🍫</div>
+                        <h3>Chocolate Day</h3>
+                        <p>Feb 9</p>
+                    </a>
+                    
+                    <a href="coming-soon.html" class="day-card" data-day="teddy">
+                        <div class="card-icon">🧸</div>
+                        <h3>Teddy Day</h3>
+                        <p>Feb 10</p>
+                    </a>
+                    
+                    <a href="coming-soon.html" class="day-card" data-day="promise">
+                        <div class="card-icon">🤝</div>
+                        <h3>Promise Day</h3>
+                        <p>Feb 11</p>
+                    </a>
+                    
+                    <a href="coming-soon.html" class="day-card" data-day="hug">
+                        <div class="card-icon">🤗</div>
+                        <h3>Hug Day</h3>
+                        <p>Feb 12</p>
+                    </a>
+                    
+                    <a href="coming-soon.html" class="day-card" data-day="kiss">
+                        <div class="card-icon">💋</div>
+                        <h3>Kiss Day</h3>
+                        <p>Feb 13</p>
+                    </a>
+                    
+                    <a href="coming-soon.html" class="day-card special" data-day="valentine">
+                        <div class="card-icon">💖</div>
+                        <h3>Valentine's Day</h3>
+                        <p>Feb 14</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/home.js"></script>
+</body>
+</html>
