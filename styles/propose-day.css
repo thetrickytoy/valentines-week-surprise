@@ -1,0 +1,402 @@
+/* ================================
+   PROPOSE DAY STYLES
+   ================================ */
+
+/* Stage 1 - Playful */
+body {
+    background: linear-gradient(135deg, #0f0a1a 0%, #1a0a2a 50%, #0a0515 100%);
+}
+
+#floatingCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.propose-card {
+    text-align: center;
+}
+
+.emoji-decoration {
+    font-size: 5rem;
+    margin-bottom: var(--spacing-md);
+    animation: bounceIn 1s ease;
+}
+
+@keyframes bounceIn {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.playful-title {
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    background: linear-gradient(135deg, var(--pink-light), var(--pink-main));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: var(--spacing-md);
+}
+
+.question-box {
+    background: rgba(255, 105, 180, 0.1);
+    border: 2px solid var(--pink-main);
+    border-radius: 20px;
+    padding: var(--spacing-md);
+    margin: var(--spacing-md) 0;
+}
+
+.question-text {
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
+    font-family: var(--font-heading);
+    color: var(--text-light);
+}
+
+.floating-hearts {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: var(--spacing-md) 0;
+}
+
+.float-heart {
+    font-size: 2rem;
+    animation: floatHeart 3s ease-in-out infinite;
+}
+
+.float-heart:nth-child(1) { animation-delay: 0s; }
+.float-heart:nth-child(2) { animation-delay: 0.5s; }
+.float-heart:nth-child(3) { animation-delay: 1s; }
+
+@keyframes floatHeart {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-20px) rotate(10deg);
+    }
+}
+
+.button-container {
+    margin: var(--spacing-lg) 0;
+}
+
+.yes-btn {
+    padding: 1.2rem 4rem;
+    font-size: 1.5rem;
+    background: linear-gradient(135deg, var(--pink-main), var(--red-main));
+    animation: pulseButton 2s ease-in-out infinite;
+}
+
+@keyframes pulseButton {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 4px 20px rgba(255, 105, 180, 0.4);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 6px 30px rgba(255, 105, 180, 0.6);
+    }
+}
+
+.hint-text {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    font-style: italic;
+}
+
+/* ================================
+   Stage 2 - Real Proposal
+   ================================ */
+
+body.real-proposal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;   /* ⭐ centers EVERYTHING horizontally */
+}
+
+#starsCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+
+.stars-decoration {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    animation: twinkle 2s ease-in-out infinite;
+    z-index: 15;
+    position: relative;
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+.ring-hint {
+    font-family: var(--font-body);
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
+    color: rgba(255, 255, 255, 0.7);
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-style: italic;
+    animation: titleFadeIn 1s ease 0.3s forwards;
+    opacity: 0;
+    z-index: 15;
+    position: relative;
+}
+
+@keyframes titleFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== RING SECTION ===== */
+
+/* ===== TRUE CENTERED RING HERO ===== */
+
+.ring-section {
+    position: relative;
+    width: 100%;
+    height: 45vh;
+    min-height: 260px;
+}
+
+/* Absolute center container */
+#ringContainer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* ⭐ perfect center */
+
+    width: 260px;
+    height: 260px;
+}
+
+/* Ensure canvas fills perfectly */
+#ringContainer canvas {
+    display: block;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+
+
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
+/* Content Wrapper - Below Ring */
+.real-proposal .content-wrapper {
+    position: relative;
+    z-index: 10;
+    min-height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    padding-bottom: 4rem;
+}
+
+.proposal-card {
+    text-align: center;
+    max-width: 900px;
+    margin-top: 0;
+}
+
+.proposal-message {
+    margin: var(--spacing-lg) 0;
+}
+
+.romantic-text {
+    font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+    line-height: 1.8;
+    color: var(--text-soft);
+    margin-bottom: var(--spacing-sm);
+}
+
+.romantic-text.emphasis {
+    font-family: var(--font-script);
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    color: var(--pink-light);
+    margin: var(--spacing-md) 0;
+}
+
+.final-question {
+    background: linear-gradient(135deg, rgba(255, 105, 180, 0.1), rgba(220, 20, 60, 0.1));
+    border: 2px solid var(--pink-main);
+    border-radius: 20px;
+    padding: var(--spacing-md);
+    margin: var(--spacing-lg) 0;
+}
+
+.question-main {
+    font-family: var(--font-heading);
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    color: var(--text-light);
+    font-weight: 600;
+}
+
+.answer-buttons {
+    display: flex;
+    gap: var(--spacing-md);
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: var(--spacing-lg) 0;
+}
+
+.answer-btn {
+    padding: 1rem 2.5rem;
+    font-size: 1.2rem;
+}
+
+.answer-btn.always {
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    box-shadow: 0 4px 20px rgba(255, 215, 0, 0.4);
+}
+
+.answer-btn.always:hover {
+    box-shadow: 0 6px 30px rgba(255, 215, 0, 0.6);
+}
+
+/* Celebration Overlay */
+.celebration-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s ease;
+}
+
+.celebration-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.celebration-content {
+    text-align: center;
+    animation: celebrationPop 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes celebrationPop {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.celebration-title {
+    font-family: var(--font-heading);
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    background: linear-gradient(135deg, var(--pink-light), var(--gold-light));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: var(--spacing-lg);
+}
+
+.continue-celebration {
+    display: inline-block;
+    padding: 1.2rem 3rem;
+    background: linear-gradient(135deg, var(--pink-main), var(--red-main));
+    color: var(--text-light);
+    text-decoration: none;
+    border-radius: 50px;
+    font-size: 1.3rem;
+    transition: all 0.3s ease;
+}
+
+.continue-celebration:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 30px rgba(255, 105, 180, 0.6);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .ring-section {
+        height: 50vh;
+        padding-top: 1rem;
+    }
+    
+    .stars-decoration {
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .ring-hint {
+        font-size: clamp(0.8rem, 3vw, 1rem);
+        margin-bottom: 1rem;
+    }
+    
+    #ringContainer {
+        width: 300px;
+        height: 300px;
+    }
+    
+    .real-proposal .content-wrapper {
+        padding: 1rem;
+        padding-bottom: 3rem;
+    }
+    
+    .answer-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .answer-btn {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .ring-section {
+        height: 45vh;
+    }
+    
+    #ringContainer {
+        width: 250px;
+        height: 250px;
+    }
+}
+
+#ringContainer canvas {
+    display: block;
+    margin: 0 auto;
+}
