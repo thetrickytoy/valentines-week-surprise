@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chocolate Day - February 9</title>
+
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍫</text></svg>">
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/chocolate-day.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+
+<button id="musicToggle" class="music-toggle">
+    <span class="music-icon">🎵</span>
+</button>
+
+<audio id="bgMusic" loop></audio>
+
+<!-- Background effects -->
+<canvas id="chocolateCanvas"></canvas>
+<canvas id="fallingCanvas"></canvas>
+
+<!-- ===== TOP SECTION ===== -->
+<div class="chocolate-section">
+
+    <h1 class="chocolate-title">Happy Chocolate Day</h1>
+    <p class="chocolate-hint">Drag the Chocolate and feast your eyes 🍫</p>
+
+    <!-- 3D CHOCOLATE (centered) -->
+    <div id="chocolateBarContainer"></div>
+
+</div>
+
+<!-- ===== MESSAGE CARD ===== -->
+<div class="content-wrapper">
+    <div class="chocolate-card">
+
+        <div class="date-badge">February 9</div>
+
+        <div class="message-content">
+            <p class="message-text">
+                Life with you is sweeter than the finest chocolate.
+            </p>
+
+            <p class="message-text">
+                Every moment with you melts my heart,
+                just like chocolate melts in warmth.
+            </p>
+
+            <p class="message-text emphasis">
+                I'll make chocolates for you very soon, my sweetiepie! 🍫💝
+            </p>
+
+            <p class="message-text">
+                Each one filled with all the love I have for you,
+                crafted with care, just for my princess.
+            </p>
+        </div>
+
+        <div class="chocolate-icons">
+            <span>🍫</span>
+            <span>💝</span>
+            <span>🍫</span>
+        </div>
+
+        <a href="index.html" class="continue-btn">
+            Next Sweet Chapter →
+        </a>
+
+    </div>
+</div>
+
+<script src="js/main.js"></script>
+<script src="js/chocolate-day.js"></script>
+
+</body>
+</html>
