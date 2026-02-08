@@ -165,22 +165,25 @@ function initRose() {
 
     scene.add(roseGroup);
 
-    /* DRAG ROTATION */
+        /* DRAG CONTROLS (MOUSE + TOUCH) */
     let dragging = false;
     let prevX = 0;
 
-    container.addEventListener("mousedown", e => {
-        dragging = true;
-        prevX = e.clientX;
-    });
-
-    window.addEventListener("mouseup", () => dragging = false);
-
-    window.addEventListener("mousemove", e => {
+    const start = x => { dragging = true; prevX = x; };
+    const move = x => {
         if (!dragging) return;
-        roseGroup.rotation.y += (e.clientX - prevX) * 0.01;
-        prevX = e.clientX;
-    });
+        roseGroup.rotation.y += (x - prevX) * 0.01;
+        prevX = x;
+    };
+    const end = () => dragging = false;
+
+    container.addEventListener("mousedown", e => start(e.clientX));
+    window.addEventListener("mousemove", e => move(e.clientX));
+    window.addEventListener("mouseup", end);
+
+    container.addEventListener("touchstart", e => start(e.touches[0].clientX));
+    window.addEventListener("touchmove", e => move(e.touches[0].clientX));
+    window.addEventListener("touchend", end);
 
     /* Gentle idle rotation */
     function animate() {
@@ -195,3 +198,4 @@ function initRose() {
 
     animate();
 }
+
