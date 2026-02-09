@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise Day - February 11</title>
+    
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤝</text></svg>">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/promise-day.css">
+</head>
+<body>
+    <button id="musicToggle" class="music-toggle">
+        <span class="music-icon">🎵</span>
+    </button>
+
+    <audio id="bgMusic" loop></audio>
+
+    <!-- Peaceful Particles -->
+    <canvas id="particlesCanvas"></canvas>
+    
+    <!-- Raining Emojis -->
+    <canvas id="rainingCanvas"></canvas>
+
+    <!-- Top Section with Title and Pinky Promise -->
+    <div class="promise-section">
+        <h1 class="promise-title">Happy Promise Day</h1>
+        <p class="promise-hint">Tap to promise ❤️</p>
+        
+        <!-- Pinky Promise Image Container -->
+        <div id="pinkyPromiseContainer" class="pinky-promise-container">
+            <img src="https://static.thenounproject.com/png/3106563-200.png" alt="Pinky Promise" class="pinky-promise-image" id="pinkyImage">
+        </div>
+    </div>
+
+    <!-- Content -->
+    <div class="content-wrapper">
+        <div class="promise-card">
+            <div class="date-badge">February 11</div>
+            
+            <div class="intro-text">
+                <p>Today, I make these promises to you...</p>
+            </div>
+            
+            <!-- EDITABLE PROMISES START -->
+            <div class="promises-list">
+                <div class="promise-item">
+                    <span class="promise-icon">💫</span>
+                    <p>I promise to love you in every moment, through every season of life.</p>
+                </div>
+                
+                <div class="promise-item">
+                    <span class="promise-icon">🌙</span>
+                    <p>I promise to be your light in the darkness and your calm in the storm.</p>
+                </div>
+                
+                <div class="promise-item">
+                    <span class="promise-icon">✨</span>
+                    <p>I promise to choose you, every single day, in every single way.</p>
+                </div>
+                
+                <div class="promise-item">
+                    <span class="promise-icon">💝</span>
+                    <p>I promise to cherish your heart and protect your dreams.</p>
+                </div>
+                
+                <div class="promise-item">
+                    <span class="promise-icon">🌟</span>
+                    <p>I promise to grow with you, laugh with you, and create beautiful memories.</p>
+                </div>
+                
+                <div class="promise-item">
+                    <span class="promise-icon">💖</span>
+                    <p>I promise that my love for you will be infinite, forever and always.</p>
+                </div>
+            </div>
+            <!-- EDITABLE PROMISES END -->
+            
+            <a href="hug-day.html" class="continue-btn">
+                Hold Me Close
+                <span class="btn-arrow">→</span>
+            </a>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/promise-day.js"></script>
+</body>
+</html>

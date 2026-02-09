@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teddy Day - February 10</title>
+    
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧸</text></svg>">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/teddy-day.css">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+    <button id="musicToggle" class="music-toggle">
+        <span class="music-icon">🎵</span>
+    </button>
+
+    <audio id="bgMusic" loop></audio>
+
+    <!-- Floating Particles -->
+    <canvas id="particlesCanvas"></canvas>
+    
+    <!-- Raining Hearts and Teddies -->
+    <canvas id="rainingCanvas"></canvas>
+
+    <!-- Top Section with Title and Teddy -->
+    <div class="teddy-section">
+        <h1 class="teddy-title">Happy Teddy Day</h1>
+            <p class="teddy-hint">Tap to make the teddy smile 🧸</p>
+
+       <div class="teddy-wrapper">
+  <div class="teddy">
+    <div class="right-ear"></div>
+    <div class="left-ear"></div>
+    <div class="head">
+      <div class="right-eye"></div>
+      <div class="left-eye"></div>
+      <div class="mouth-area">
+        <div class="right-cheek"></div>
+        <div class="left-cheek"></div>
+        <div class="nose">
+          <div class="nose-inner"></div>
+        </div>
+          <div class="smile"></div>
+      </div>
+    </div>
+    <div class="body"></div>
+    <div class="right-arm">
+      <div class="arm-inner"></div>
+      <div class="paw"></div>
+    </div>
+    <div class="left-arm">
+      <div class="arm-inner"></div>
+      <div class="paw"></div>
+    </div>
+    <div class="right-leg">
+      <div class="foot"></div>
+    </div>
+    <div class="left-leg">
+      <div class="foot"></div>
+    </div>
+  </div>
+</div>
+
+    </div>
+
+    <!-- Content -->
+    <div class="content-wrapper">
+        <div class="teddy-card">
+            <div class="date-badge">February 10</div>
+            
+            <!-- EDITABLE MESSAGE START -->
+            <div class="message-content">
+                <p class="message-text">
+                    Just like a teddy bear is a symbol of comfort and warmth,
+                    you are my safe haven.
+                </p>
+                <p class="message-text">
+                    Whenever I'm with you, I feel at home.
+                    Your embrace is my favorite place in the world.
+                </p>
+                <p class="message-text">
+                    I want to be your comfort, your warmth,
+                    the one you turn to when you need a hug.
+                </p>
+                <p class="message-text emphasis">
+                    You'll always have me to hold onto,
+                    through every storm and every sunny day.
+                </p>
+                <p class="message-text emphasis">
+                    I'll be your Teddy & Doraemon always.
+                </p>
+
+            </div>
+            <!-- EDITABLE MESSAGE END -->
+            
+            <a href="index.html" class="continue-btn">
+                Our Promises Await
+                <span class="btn-arrow">→</span>
+            </a>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/teddy-day.js"></script>
+</body>
+</html>
