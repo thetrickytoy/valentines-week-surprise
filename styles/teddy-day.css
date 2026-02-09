@@ -1,0 +1,359 @@
+/* ================================
+   TEDDY DAY STYLES
+   ================================ */
+
+body {
+    background: linear-gradient(135deg, #1a1410 0%, #3d2f1a 50%, #0f0a08 100%);
+    overflow-x: hidden;
+}
+
+#particlesCanvas,
+#rainingCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+#particlesCanvas {
+    z-index: 1;
+}
+
+#rainingCanvas {
+    z-index: 2;
+}
+
+/* Teddy Section at Top */
+.teddy-section {
+    position: relative;
+    width: 100%;
+    height: 65vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    justify-content: flex-start;   /* ⬅️ KEY FIX */
+    padding-top: 1rem;             /* ⬅️ pushes teddy BELOW title & hint */
+
+    z-index: 10;
+}
+
+
+
+.teddy-title {
+    font-family: var(--font-heading);
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 700;
+    text-align: center;
+    background: linear-gradient(135deg, #daa520, #cd853f, #8b7355);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: titleFadeIn 1s ease forwards;
+    z-index: 15;
+    position: relative;
+    margin-top: 0;          /* stick to top */
+    margin-bottom: 0.5rem;  /* small gap before hint */
+}
+
+.teddy-hint {
+    font-family: var(--font-body);
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
+    color: rgba(222, 184, 135, 0.8);
+    text-align: center;
+    margin-bottom: 2rem;
+    font-style: italic;
+    animation: titleFadeIn 1s ease 0.3s forwards;
+    opacity: 0;
+    z-index: 15;
+    position: relative;
+}
+
+@keyframes titleFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
+/* Content Wrapper - Below Teddy */
+.content-wrapper {
+    position: relative;
+    z-index: 10;
+    min-height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    padding-bottom: 4rem;
+}
+
+.teddy-card {
+    background: linear-gradient(135deg, rgba(139, 90, 43, 0.1), rgba(222, 184, 135, 0.1));
+    border-color: rgba(222, 184, 135, 0.3);
+    margin-top: 0;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+/* Center the continue button */
+.teddy-card .continue-btn {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .teddy-section {
+        height: 55vh;
+        padding-top: 1rem;
+    }
+    
+    .teddy-title {
+        font-size: clamp(2rem, 8vw, 3rem);
+        margin-bottom: 0.5rem;
+    }
+    
+    .teddy-hint {
+        font-size: clamp(0.8rem, 3vw, 1rem);
+        margin-bottom: 1rem;
+    }
+    
+    .content-wrapper {
+        padding: 1rem;
+        padding-bottom: 3rem;
+    }
+}
+
+
+
+
+.teddy {
+	font-size: calc(29vmin / 260);
+	position: relative;
+	margin: auto;
+	width: 260em;
+	height: 330em;
+}
+.teddy div {
+	position: absolute;
+}
+.right-ear, .left-ear, .head, .right-eye, .left-eye, .mouth-area, .nose, .nose-inner, .right-cheek, .left-cheek, .body, .paw, .foot {
+	border-radius: 50%;
+}
+.right-ear, .left-ear {
+	background: rgb(95,60,30);
+	box-shadow: 0 0 0 20em rgb(190,120,60) inset;
+	width: 80em;
+	height: 80em;
+}
+.right-ear {
+	left: 30em;
+}
+.left-ear {
+	right: 30em;
+}
+.head {
+	background: rgb(190,120,60);
+	width: 160em;
+	height: 160em;
+	right: 0;
+	left: 0;
+	margin: auto;
+	z-index: 1;
+}
+.right-eye, .left-eye, .nose-inner {
+	background: rgb(255, 255, 255);
+}
+.right-eye, .left-eye {
+	box-shadow: 2em -2em 0 8em inset;
+	top: 65em;
+	width: 20em;
+	height: 20em;
+}
+.right-eye {
+	left: 45em;
+}
+.left-eye {
+	right: 45em;
+}
+.mouth-area {
+	background: rgb(230,160,90);
+	right: 0;
+	bottom: 5em;
+	left: 0;
+	margin: auto;
+	width: 100em;
+	height: 70em;
+}
+.nose {
+	background: rgb(0,0,0);
+	top: 15em;
+	right: 0;
+	left: 0;
+	margin: auto;
+	width: 40em;
+	height: 30em;
+}
+.nose-inner {
+	top: 3em;
+	right: 8em;
+	width: 10em;
+	height: 8em;
+}
+.right-cheek, .left-cheek {
+    bottom: 10em;
+    width: 30em;
+    height: 30em;
+    background: transparent;   /* removes lip illusion */
+    box-shadow: none;          /* removes curved mouth lines */
+}
+.right-cheek { left: 20em; }
+.left-cheek { right: 20em; }
+
+.body {
+	background: rgb(230,160,90);
+	box-shadow: 0 0 0 24em rgb(190,120,60) inset;
+	margin: auto;
+	right: 0;
+	bottom: 22em;
+	left: 0;
+	width: 170em;
+	height: 190em;
+}
+.right-arm, .left-arm {
+	background: rgb(170,100,50);
+	top: 130em;
+	width: 70em;
+	height: 60em;
+}
+.right-arm {
+	border-radius: 70em 0 0 0 / 60em 0 0 0;
+	left: 0;
+}
+.right-arm .arm-inner {
+	border-radius: 50em 0 0 0 / 80em 0 0 0;
+	box-shadow: 22em 22em 0 0 rgb(170,100,50) inset;
+	left: 55em;
+}
+.left-arm, .left-arm .paw {
+	right: 0;
+}
+.left-arm {
+	border-radius: 0 70em 0 0 / 0 60em 0 0;
+}
+.left-arm .arm-inner {
+	border-radius: 0 50em 0 0 / 0 80em 0 0;
+	box-shadow: -22em 22em 0 0 rgb(170,100,50) inset;
+	right: 55em;
+}
+.arm-inner {
+	width: 50em;
+	height: 80em;
+	bottom: 0;
+}
+.paw {
+	background: rgb(190,120,60);
+	width: 80em;
+	height: 60em;
+	top: 30em;
+}
+.right-leg, .left-leg {
+	background: rgb(170,100,50);
+	border-radius: 45em 45em 0 0 / 70em 70em 0 0;
+	bottom: 40em;
+	width: 90em;
+	height: 70em;
+}
+.right-leg  {
+	left: 10em;
+}
+.left-leg  {
+	right: 10em;
+}
+.foot  {
+	background: rgb(230,160,90);
+	box-shadow: 0 5em 0 10em rgb(190,120,60) inset;
+	width: 100%;
+	height: 80em;
+	top: 30em;
+}
+
+/* CENTER + CONTROL SIZE */
+.teddy-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 0 1rem;
+    padding-top: 0;
+}
+
+
+
+/* FIX EYES VISIBILITY */
+.right-eye, .left-eye {
+    box-shadow: 2em -2em 0 8em rgba(0,0,0,0.9) inset;
+}
+
+.teddy-wrapper {
+    animation: floatBear 4s ease-in-out infinite;
+}
+
+@keyframes floatBear {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+}
+
+/* SMILE CURVE */
+.smile {
+    position: absolute;
+    bottom: 8em;
+    left: 50%;
+    transform: translateX(-50%) scaleX(0);
+    width: 50em;
+    height: 25em;
+    border-bottom: 6em solid #5a2d0c;
+    border-radius: 0 0 50em 50em;
+    transition: transform 0.4s ease;
+}
+
+/* BLUSH */
+.right-cheek,
+.left-cheek {
+    transition: background 0.4s ease;
+}
+
+/* WHEN HAPPY */
+.teddy.happy .smile {
+    transform: translateX(-50%) scaleX(1);
+}
+
+
+
+/* tiny bounce */
+.teddy.happy {
+    animation: bearBounce 0.5s ease;
+}
+
+@keyframes bearBounce {
+    0%   { transform: translateY(0); }
+    40%  { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
