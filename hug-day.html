@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hug Day - February 12</title>
+    
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🫂</text></svg>">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/hug-day.css">
+</head>
+<body>
+    <button id="musicToggle" class="music-toggle">
+        <span class="music-icon">🎵</span>
+    </button>
+
+    <audio id="bgMusic" loop></audio>
+
+    <!-- Floating Dust Particles -->
+    <canvas id="dustCanvas"></canvas>
+    
+    <!-- Raining Hug Emojis -->
+    <canvas id="rainingCanvas"></canvas>
+
+    <!-- Top Section with Title and Hug Image -->
+    <div class="hug-section">
+        <h1 class="hug-title">Happy Hug Day</h1>
+        <p class="hug-hint">Hold to hug tightly 🤗</p>
+        
+        <!-- Hug Image Container -->
+        <div id="hugImageContainer" class="hug-image-container">
+            <img src="hug.png" alt="Hug" class="hug-image" id="hugImage">
+        </div>
+    </div>
+
+    <!-- Content -->
+    <div class="content-wrapper">
+        <div class="hug-card">
+            <div class="date-badge">February 12</div>
+            
+            <!-- EDITABLE MESSAGE START -->
+            <div class="message-content">
+                <p class="message-text">
+                    Your hugs feel like coming home after a long journey.
+                </p>
+                <p class="message-text">
+                    In your arms, I find peace that words cannot describe.
+                </p>
+                <p class="message-text">
+                    Every embrace reminds me that I'm exactly where I'm meant to be.
+                </p>
+                <p class="message-text emphasis">
+                    I want to hold you close, not just today,
+                    but for all the tomorrows we'll share together.
+                </p>
+                <p class="message-text">
+                    In every hug, I'm telling you silently:
+                    "You are loved, you are safe, you are mine."
+                </p>
+            </div>
+            <!-- EDITABLE MESSAGE END -->
+            
+            <a href="index.html" class="continue-btn">
+                More Close
+                <span class="btn-arrow">👩‍❤️‍💋‍👨</span>
+            </a>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/hug-day.js"></script>
+</body>
+</html>
