@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiss Day - February 13</title>
+    
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👩‍❤️‍💋‍👨</text></svg>">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/kiss-day.css">
+</head>
+<body>
+    <button id="musicToggle" class="music-toggle">
+        <span class="music-icon">🎵</span>
+    </button>
+
+    <audio id="bgMusic" loop></audio>
+
+    <!-- Floating Particles -->
+    <canvas id="particlesCanvas"></canvas>
+    
+    <!-- Raining Kiss Emojis -->
+    <canvas id="rainingCanvas"></canvas>
+
+    <!-- Top Section with Title and Kiss Image/GIF -->
+    <div class="kiss-section">
+        <h1 class="kiss-title">Happy Kiss Day</h1>
+        <p class="kiss-hint">Tap <span id="tapCounter">5</span> times 💋</p>
+        <p class="kiss-progress" id="kissProgress">1..2..3..4..5..</p>
+        
+        <!-- Kiss Image/GIF Container -->
+        <div id="kissContainer" class="kiss-container">
+            <img src="" alt="Kiss" class="kiss-image" id="kissImage">
+        </div>
+    </div>
+
+    <!-- Content -->
+    <div class="content-wrapper">
+        <div class="kiss-card">
+            <div class="date-badge">February 13</div>
+            
+            <!-- EDITABLE MESSAGE START -->
+            <div class="message-content">
+                <p class="message-text">
+                    A kiss is not just a touch of lips,
+                </p>
+                <p class="message-text">
+                    It's a promise whispered without words,
+                </p>
+                <p class="message-text">
+                    A moment where two souls recognize each other.
+                </p>
+                <p class="message-text">
+                    Every kiss with you feels like the first -
+                    magical, electric, timeless.
+                </p>
+                <p class="message-text emphasis">
+                    In your kiss, I find forever.
+                </p>
+                <p class="message-text">
+                    I want to kiss away your worries,
+                    seal every promise with my lips,
+                    heal your every scar with my love,
+                    and show you through every gentle touch
+                    just how deeply you are loved.
+                </p>
+            </div>
+            <!-- EDITABLE MESSAGE END -->
+            
+            <a href="index.html" class="continue-btn">
+                The Grand Finale awaits
+                <span class="btn-arrow">💖</span>
+            </a>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/kiss-day.js"></script>
+</body>
+</html>
