@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Day - February 14</title>
+    
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💖</text></svg>">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/valentine-day.css">
+</head>
+<body>
+    <button id="musicToggle" class="music-toggle">
+        <span class="music-icon">🎵</span>
+    </button>
+
+    <audio id="bgMusic" loop></audio>
+
+    <!-- Fireflies & Hearts Canvas -->
+    <canvas id="firefliesCanvas"></canvas>
+
+    <!-- Valentine Section -->
+    <div class="valentine-section">
+        <h1 class="valentine-title">Happy Valentine's Day My Love</h1>
+        <p class="valentine-hint">Touch my heart to make it beat 💓</p>
+        
+        <!-- Heart GIF Container -->
+        <div id="heartContainer" class="heart-container">
+            <img src="" alt="Heart" class="heart-image" id="heartImage">
+        </div>
+    </div>
+
+    <!-- Content -->
+    <div class="content-wrapper">
+        <div class="valentine-card">
+            <div class="date-badge">February 14</div>
+            
+            <!-- EDITABLE MESSAGE START -->
+            <div class="message-flow">
+                <div class="message-block">
+                    <h2 class="section-heading">Gratitude</h2>
+                    <p class="message-text">
+                        Thank you for existing in this timeline, in this world, at this moment with me.
+                    </p>
+                    <p class="message-text">
+                        Thank you for every smile, every laugh, every tear you've shared with me.
+                    </p>
+                    <p class="message-text">
+                        Thank you for being with me in my darkest days and my brightest moments.
+                    </p>
+                </div>
+                
+                <div class="message-block">
+                    <h2 class="section-heading">Love</h2>
+                    <p class="message-text">
+                        Loving you is the most natural thing I've ever done.
+                    </p>
+                    <p class="message-text">
+                        You are my sunrise after the darkest night,
+                        my calm in every storm,
+                        my home in every place.
+                    </p>
+                    <p class="message-text emphasis">
+                        I love you more than words can express,
+                        more than time can measure.
+                    </p>
+                </div>
+                
+                <div class="message-block">
+                    <h2 class="section-heading">Our Future</h2>
+                    <p class="message-text">
+                        I dream of countless tomorrows with you.
+                    </p>
+                    <p class="message-text">
+                        Of building a life together, creating memories,
+                        growing old with you by my side.
+                    </p>
+                    <p class="message-text">
+                        I want to wake up next to you every morning,
+                        share every adventure, every quiet moment,
+                        and love you more with each passing day.
+                    </p>
+                </div>
+                
+                <div class="final-message">
+                    <p class="message-text grand">
+                        Every day with you is my Valentine's Day.
+                    </p>
+                    <p class="message-text">
+                        But today, I want to remind you just how deeply,
+                        completely, and eternally you are loved.
+                    </p>
+                </div>
+            </div>
+            <!-- EDITABLE MESSAGE END -->
+            
+            <a href="secret-letter.html" class="secret-btn">
+                One Last Surprise... 💌
+            </a>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/valentine-day.js"></script>
+</body>
+</html>
