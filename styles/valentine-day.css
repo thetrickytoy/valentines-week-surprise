@@ -1,0 +1,298 @@
+/* ================================
+   VALENTINE'S DAY FINALE STYLES
+   ================================ */
+
+body {
+    background: linear-gradient(135deg, #000000 0%, #1a0a1f 50%, #000510 100%);
+    overflow-x: hidden;
+}
+
+#firefliesCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Valentine Section at Top */
+.valentine-section {
+    position: relative;
+    width: 100%;
+    height: 65vh;
+    display: flex-start;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    padding-top: 0;
+}
+
+
+.valentine-title {
+    font-family: var(--font-heading);
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(135deg, var(--pink-light), var(--gold-light));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: titleFadeIn 1s ease forwards;
+    z-index: 15;
+    position: relative;
+}
+
+.valentine-hint {
+    font-family: var(--font-body);
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
+    color: rgba(255, 182, 193, 0.9);
+    text-align: center;
+    margin-bottom: 0.5rem;
+    font-style: italic;
+    animation: titleFadeIn 1s ease 0.3s forwards;
+    opacity: 0;
+    z-index: 15;
+    position: relative;
+}
+
+@keyframes titleFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Heart Container - Perfectly Centered */
+.heart-container {
+    position: relative;
+    width: 450px;
+    height: 450px;
+    margin: 0 auto;
+    z-index: 10;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 7rem;
+}
+
+/* Floating animation ONLY vertical */
+@keyframes floatHeart {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+
+.heart-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 30px;
+    transition: transform 0.2s ease;
+}
+
+
+.heart-container:hover .heart-image {
+    transform: scale(1.05);
+}
+
+.heart-container:active .heart-image {
+    transform: scale(0.95);
+}
+
+/* Playing animation */
+.heart-container.playing {
+    animation: none;
+}
+
+.heart-container.playing .heart-image {
+    animation: heartBeatAnimation 0.6s ease;
+}
+
+@keyframes heartBeatAnimation {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+/* Content Wrapper - Below Heart */
+.content-wrapper {
+    position: relative;
+    z-index: 10;
+    min-height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    padding-bottom: 4rem;
+}
+
+.valentine-card {
+    max-width: 1000px;
+    background: linear-gradient(135deg, rgba(255, 105, 180, 0.08), rgba(138, 43, 226, 0.08));
+    border-color: rgba(255, 105, 180, 0.2);
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.message-flow {
+    margin: var(--spacing-xl) 0;
+}
+
+.message-block {
+    margin-bottom: var(--spacing-xl);
+    padding: var(--spacing-md);
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 20px;
+    border-left: 4px solid var(--pink-main);
+    animation: fadeInBlock 1s ease forwards;
+    opacity: 0;
+}
+
+.message-block:nth-child(1) { animation-delay: 0.2s; }
+.message-block:nth-child(2) { animation-delay: 0.4s; }
+.message-block:nth-child(3) { animation-delay: 0.6s; }
+
+@keyframes fadeInBlock {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+}
+
+.section-heading {
+    font-family: var(--font-heading);
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    color: var(--pink-light);
+    margin-bottom: var(--spacing-sm);
+}
+
+.message-text {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    line-height: 1.8;
+    margin-bottom: var(--spacing-sm);
+    color: var(--text-soft);
+    text-align: center;
+}
+
+.message-text.emphasis {
+    font-family: var(--font-script);
+    font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+    color: var(--pink-light);
+    margin: var(--spacing-md) 0;
+}
+
+.final-message {
+    text-align: center;
+    margin-top: var(--spacing-xl);
+    padding: var(--spacing-lg);
+    background: linear-gradient(135deg, rgba(255, 105, 180, 0.1), rgba(255, 215, 0, 0.1));
+    border-radius: 30px;
+    border: 2px solid var(--pink-main);
+}
+
+.message-text.grand {
+    font-family: var(--font-heading);
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    background: linear-gradient(135deg, var(--pink-light), var(--gold-light));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: var(--spacing-md);
+}
+
+.secret-btn {
+    display: block;
+    margin: var(--spacing-xl) auto 0;
+    padding: 1.2rem 3rem;
+    background: linear-gradient(135deg, var(--pink-main), var(--red-main), var(--gold));
+    color: var(--text-light);
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 500;
+    font-size: 1.2rem;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(255, 105, 180, 0.4);
+    animation: secretGlow 2s ease-in-out infinite;
+    width: fit-content;
+}
+
+@keyframes secretGlow {
+    0%, 100% {
+        box-shadow: 0 4px 20px rgba(255, 105, 180, 0.4);
+    }
+    50% {
+        box-shadow: 0 8px 40px rgba(255, 215, 0, 0.6);
+    }
+}
+
+.secret-btn:hover {
+    transform: scale(1.05);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .valentine-section {
+        height: 60vh;
+        padding-top: 2rem;
+    }
+    
+    .valentine-title {
+        font-size: clamp(2rem, 8vw, 3rem);
+        margin-bottom: 0.3rem;
+    }
+    
+    .valentine-hint {
+        font-size: clamp(0.8rem, 3vw, 1rem);
+        margin-bottom: 1rem;
+    }
+    
+    .heart-container {
+        width: 280px;
+        height: 280px;
+    }
+    
+    .content-wrapper {
+        padding: 1rem;
+        padding-bottom: 3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .valentine-section {
+        height: 55vh;
+        padding-top: 1.5rem;
+    }
+    
+    .valentine-title {
+        margin-bottom: 0.2rem;
+    }
+    
+    .valentine-hint {
+        margin-bottom: 0.8rem;
+    }
+    
+    .heart-container {
+        width: 240px;
+        height: 240px;
+    }
+}
